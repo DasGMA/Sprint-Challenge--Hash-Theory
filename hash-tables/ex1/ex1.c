@@ -6,8 +6,22 @@
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
-
+  Answer *answer = malloc(sizeof(Answer));
   // YOUR CODE HERE
+
+// I had a look at this reference http://k2code.blogspot.com/2012/01/given-integer-array-and-number-x-find.html
+  for (int i = 0; i < length; i++) {
+    int key = hash_table_retrieve(ht, weights[i]);
+    if (key != -1) {
+      answer -> index_1 = i;
+      answer -> index_2 = key;
+      return answer;
+    } else {
+      hash_table_insert(ht, limit - weights[i], i);
+    }
+  }
+
+
 
   return NULL;
 }
