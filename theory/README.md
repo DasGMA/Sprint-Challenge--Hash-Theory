@@ -106,5 +106,5 @@ A     B     C      carry   sum
 1     1     0        1      0
 1     1     1        1      1
 ```
-* SUM = (A XOR B) XOR Cin = (A ⊕ B) ⊕ Cin
-* CARRY = A AND B OR Cin(A XOR B) = A.B + Cin(A ⊕ B)
+* SUM = (A XOR B) XOR C = (A ⊕ B) ⊕ C
+* CARRY = A AND B OR C(A XOR B) = A.B + C(A ⊕ B)
