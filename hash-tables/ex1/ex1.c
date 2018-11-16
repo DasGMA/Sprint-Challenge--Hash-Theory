@@ -11,6 +11,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 
 // I had a look at this reference http://k2code.blogspot.com/2012/01/given-integer-array-and-number-x-find.html
   for (int i = 0; i < length; i++) {
+    // Key is the element and value is its index
     int key = hash_table_retrieve(ht, weights[i]);
     if (key != -1) {
       answer -> index_1 = i;
@@ -20,9 +21,6 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
       hash_table_insert(ht, limit - weights[i], i);
     }
   }
-
-
-
   return NULL;
 }
 
