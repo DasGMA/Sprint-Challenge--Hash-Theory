@@ -16,11 +16,14 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
     if (key != -1) {
       answer -> index_1 = i;
       answer -> index_2 = key;
+      destroy_hash_table(ht);
       return answer;
     } else {
       hash_table_insert(ht, limit - weights[i], i);
     }
   }
+
+  destroy_hash_table(ht);
   return NULL;
 }
 
